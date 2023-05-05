@@ -13,7 +13,7 @@ class MainViewModel(private val repository: ListRepository ): ViewModel() {
 
     init {
         viewModelScope.launch(Dispatchers.IO){
-            repository.getList(1)
+            repository.getList()
         }
     }
 

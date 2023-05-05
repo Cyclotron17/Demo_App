@@ -15,7 +15,7 @@ class ListRepository(private val listservice: ApiService) {
     val lists: LiveData<List<Result>>
         get() = listLiveData
 
-    suspend fun getList(page: Int) {
+    suspend fun getList() {
         val result = listservice.getList()
         if (result.body() != null) {
             list=result.body()!!.results

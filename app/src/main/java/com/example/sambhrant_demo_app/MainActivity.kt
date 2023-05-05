@@ -1,5 +1,6 @@
 package com.example.sambhrant_demo_app
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -25,9 +26,13 @@ class MainActivity : AppCompatActivity() {
     lateinit var adapter: ListAdapter
     lateinit var list: List<Result>
     lateinit var mainViewModel: MainViewModel
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+
 
         var recycler = findViewById<RecyclerView>(R.id.recyclerview)
 
@@ -39,6 +44,7 @@ class MainActivity : AppCompatActivity() {
             ViewModelProvider(this, MainViewModelFactory(repository))[MainViewModel::class.java]
         mainViewModel.lists.observe(this, Observer {
             list = it
+            adapter.notifyDataSetChanged()
             println(list)
 
         })
