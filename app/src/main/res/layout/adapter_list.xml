@@ -4,8 +4,8 @@
     android:layout_marginBottom="8dp"
     android:layout_marginStart="8dp"
     android:layout_marginEnd="8dp"
-    android:cardElevation="4dp"
-    android:cardUseCompatPadding="true"
+
+
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
@@ -13,6 +13,14 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="8dp">
+        <ImageView
+            android:id="@+id/thumbImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/brk"
+            />
+
 
         <ImageView
             android:id="@+id/listingImage"
@@ -20,7 +28,7 @@
             android:layout_height="200dp"
             android:scaleType="centerCrop"
             android:src="@drawable/brk"
-            android:visibility="gone" />
+           />
 
         <TextView
             android:id="@+id/listingTitle"

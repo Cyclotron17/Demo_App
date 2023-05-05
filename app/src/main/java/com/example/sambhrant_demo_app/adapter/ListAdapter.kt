@@ -18,12 +18,12 @@ class ListAdapter(val context: Context, val lists: List<Result>) : RecyclerView.
 
     class ArticleViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
-        var name=itemView.findViewById<TextView>(R.id.name)
+        var name=itemView.findViewById<TextView>(R.id.listingTitle)
         var image=itemView.findViewById<ImageView>(R.id.listingImage)
-        var imgurl=itemView.findViewById<ImageView>(R.id.)
-        var price=itemView.findViewById<TextView>(R.id.price)
-        var dateAdded=itemView.findViewById<TextView>(R.id.date)
-        var currency=itemView.findViewById<TextView>(R.id.curency)
+        var imgurl=itemView.findViewById<ImageView>(R.id.thumbImage)
+        var price=itemView.findViewById<TextView>(R.id.listingPrice)
+        var dateAdded=itemView.findViewById<TextView>(R.id.listingDate)
+        var currency=itemView.findViewById<TextView>(R.id.listingPrice)
 
     }
 

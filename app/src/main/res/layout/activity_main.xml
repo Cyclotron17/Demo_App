@@ -6,10 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listingRecyclerView"
+        android:id="@+id/recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+
         android:layout_margin="8dp"
         android:clipToPadding="false"
         android:padding="8dp"
@@ -18,18 +21,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/adapter_list" />
+        tools:listitem="@layout/adapter_list"  />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/adapter_list"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
-        />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/bottom_navigation_menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>

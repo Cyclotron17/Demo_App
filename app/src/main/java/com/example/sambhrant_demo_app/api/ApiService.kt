@@ -7,5 +7,5 @@ import retrofit2.http.Query
 
 interface ApiService {
     @GET("default/dynamodb-writer")
-    suspend fun getList(@Query("page")page:Int): Response<Listing>
+    suspend fun getList(): Response<Listing>
 }

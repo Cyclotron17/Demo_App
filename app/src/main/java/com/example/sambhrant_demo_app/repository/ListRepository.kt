@@ -16,7 +16,7 @@ class ListRepository(private val listservice: ApiService) {
         get() = listLiveData
 
     suspend fun getList(page: Int) {
-        val result = listservice.getList(page)
+        val result = listservice.getList()
         if (result.body() != null) {
             list=result.body()!!.results
             listLiveData.postValue(list)
@@ -34,6 +34,12 @@ class ListRepository(private val listservice: ApiService) {
                 // Sort by price in descending order
                 val sortedList = list.sortedByDescending { it.price }
                 listLiveData.postValue(sortedList)
+            }
+            "dateIncrease" -> {
+                listLiveData.postValue(list.sortedBy { it.createdAt })
+            }
+            "dateDecrease" -> {
+                listLiveData.postValue(list.sortedByDescending { it.createdAt })
             }
             else -> {
                 // No filter specified, return the original list

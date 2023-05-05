@@ -15,11 +15,13 @@ import com.example.sambhrant_demo_app.model.Result
 import com.example.sambhrant_demo_app.repository.ListRepository
 import com.example.sambhrant_demo_app.viewmodels.MainViewModel
 import com.example.sambhrant_demo_app.viewmodels.MainViewModelFactory
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.http.GET
 
 class MainActivity : AppCompatActivity() {
+    lateinit var gett: ListRepository
     lateinit var adapter: ListAdapter
     lateinit var list: List<Result>
     lateinit var mainViewModel: MainViewModel
@@ -43,6 +45,34 @@ class MainActivity : AppCompatActivity() {
         adapter = ListAdapter(this@MainActivity, list)
         recycler.adapter = adapter
         recycler.layoutManager = LinearLayoutManager(this@MainActivity)
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.filterPriceAscending -> {
+                   gett.getList("priceIncrease")
+                    // Handle filter button click for price ascending
+                    true
+                }
+                R.id.filterPriceDescending -> {
+                    gett.getList("priceDecrease")
+                    // Handle filter button click for price descending
+                    true
+                }
+                R.id.filterDateAscending -> {
+                    // Handle filter button click for date ascending
+                    gett.getList("dateIncrease")
+
+                    true
+                }
+                R.id.filterDateDescending -> {
+                    gett.getList( "dateDecrease")
+                    // Handle filter button click for date descending
+                    true
+                }
+                else -> false
+            }
+        }
 
     }
 }

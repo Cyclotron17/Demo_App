@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/filterPriceAscending"
+        android:title="Price (Low to High)"
+
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/filterPriceDescending"
+        android:title="Price (High to Low)"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/filterDateAscending"
+        android:title="Date (Oldest to Latest)"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/filterDateDescending"
+        android:title="Date (Latest to Oldest)"
+        app:showAsAction="ifRoom" />
+
+</menu>
